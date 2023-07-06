@@ -23,3 +23,17 @@
 
 //Amorçage de l'application (Charger les fichier de configuration)
 require __DIR__ . "/../config/bootstrap.php";
+
+// Chargement du noyau de l'application
+require ROOT . "/src/kernel.php";
+
+// Permet de vérifier que la requête a été effectué depuis un navigateur et non par un terminal.
+if ( php_sapi_name() !== "cli")
+{
+// Traitrement de la requêtte et récupération de la réponse correspondante.
+$response = handleRequest();
+
+// Affichage de la réponse au client 
+echo $response;
+}
+

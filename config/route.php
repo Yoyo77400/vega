@@ -1,0 +1,3 @@
+<?php 
+
+get("/", ["testControler", "index"]);
