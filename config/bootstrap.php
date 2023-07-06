@@ -1,6 +1,4 @@
-<?php 
-
-
+<?php
 /**
  * ---------------------------------------------------------------------------
  *                         L'amorceur de l'application
@@ -12,12 +10,19 @@
  *      - Charger la configuration session
  *      - Charger le monolog
  * ---------------------------------------------------------------------------
- */ 
+ */
 
 // chargement des raccourcis (constante)
 require __DIR__ . "/constants.php";
 
- // chargement des variables d'environnement
-$envFile = parse_ini_file(ROOT . "/env.conf");
+// chargement des variables d'environnement
+require __DIR__ . "/dotenv.php";
 
-var_dump($envFile);
+// chargement de la configuration système
+require __DIR__ . "/system.php";
+
+// chargement de la configuration session
+require __DIR__ . "/session.php";
+
+//Chargement du monolog
+require __DIR__ . "/monolog.php";
